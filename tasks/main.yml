@@ -1,0 +1,12 @@
+---
+- name: install clamav packages
+  apt:
+          name: "{{clamav_packages}}"
+          state: "latest"
+
+- name: install cron job
+  cron:
+          name: "antivirus-scan"
+          minute: "{{clamav_minute}}"
+          hour: "{{clamav_hour}}"
+          job: "/usr/bin/clamscan --infected  --remove=no --recursive=yes --scan-archive=no /"

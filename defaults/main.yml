@@ -1,0 +1,6 @@
+---
+clamav_packages:
+        - clamav
+
+clamav_minute: "30"
+clamav_hour: "08,20"
