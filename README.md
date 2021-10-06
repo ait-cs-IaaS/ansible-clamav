@@ -1,26 +1,30 @@
-# ClamAV-Ansible-Role
+# Ansible Role: clamav
 
-This ansible installs the clamav-command-line scanner and
-schedules a cronjob for it.
+This Ansible Role installs the clamav-command-line scanner and schedules a cronjob for it.
 
-# Defaults
+## Defaults
 
-```
+```yaml
 clamav_packages:
-        - clamav
+  - clamav
+```
 
+```yaml
 clamav_minute: "30"
+```
+
+```yaml
 clamav_hour: "08,20"
 ```
 
-# Usage
+## Usage
 
-```
+```yaml
 - hosts: localhost
   roles:
-        - clamav
+    - clamav
   vars:
-# run daily at 09:45
-        clamav_minute: "45"
-        clamav_hour: "09"
+    # run daily at 09:45
+    clamav_minute: "45"
+    clamav_hour: "09"
 ```
